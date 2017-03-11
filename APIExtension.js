@@ -15,13 +15,12 @@
     // Functions for block with type 'w' will get a callback function as the 
     // final argument. This should be called to indicate that the block can
     // stop waiting.
-    ext.wait_random = function(callback) {
-        wait = Math.random();
-        console.log('Waiting for ' + wait + ' seconds');
-        console.log(callback);
+    ext.wait_random = function(callback, seconds) {
+        console.log('Waiting for ' + seconds + ' seconds');
+        console.log(seconds);
         window.setTimeout(function() {
             callback();
-        }, wait*1000);
+        }, seconds*1000);
     };
 
     // Block and block menu descriptions
@@ -29,7 +28,7 @@
         blocks: [
             // Block type, block name, function name, param1 default value, param2 default value
             ['r', '%n ^ %n', 'power', 2, 3],
-            ['w', 'wait for random time', 'wait_random'],
+            ['w', '%n wait for random time', 'wait_random', 1],
         ]
     };
 
