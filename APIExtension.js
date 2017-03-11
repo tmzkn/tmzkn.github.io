@@ -18,6 +18,7 @@
     ext.wait_random = function(callback) {
         wait = Math.random();
         console.log('Waiting for ' + wait + ' seconds');
+        console.log(callback);
         window.setTimeout(function() {
             callback();
         }, wait*1000);
