@@ -52,11 +52,13 @@
     connection.onerror = function (error) {
         console.log('Error detected: ' + error.toString());
     }
-
+    var counter=0;
     connection.onmessage = function (e) {
         var kdata = JSON.parse(e.data);
-
-        // console.log(kdata);
+        counter++;
+	if (counter%100==0){
+	console.log(kdata);
+	}
 
         // Check if it's a body (could be a face etc.)
         if (kdata.type == "body") {
