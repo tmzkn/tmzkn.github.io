@@ -56,9 +56,9 @@
     connection.onmessage = function (e) {
         var kdata = JSON.parse(e.data);
         counter++;
-	if (counter%100==0){
+
 	console.log(kdata);
-	}
+	
 
         // Check if it's a body (could be a face etc.)
         if (kdata.type == "body") {
